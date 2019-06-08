@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blog-app</title>
+</head>
+
+<body>
+    <h1><a href="">CP BLOG</a></h1>
+
+
+    {% for post in posts %}
+    <div>
+        <p>Published: {{ post.published_date }}</p>
+        <h3><a href="" style="text-decoration: none;">{{ post.title }}</a></h3>
+        <p>{{ post.text| linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+
+</body>
+
+</html>
