@@ -10,4 +10,8 @@ urlpatterns = [
     # 127.0.0.1:8000/post/1
     # myApp.com/post/1
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
+
+    #127.0.0.1:8000/post/new
+    #myApp.com/post/new
+    path('post/new/', views.post_edit, name="post_edit"),
 ]

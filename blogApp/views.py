@@ -14,4 +14,5 @@ def post_detail(request, pk):
     stuff_for_frontend = {'post': post}
     return render(request, 'blogApp/post_detail.html', stuff_for_frontend)
     
-    
+def post_edit(request):
+    return render(request, 'blogApp/post_edit.html')
