@@ -1,0 +1,45 @@
+.head-div {
+    padding: 27px 27px 27px 45px;
+    background-color: rgb(80, 97, 97);
+}
+.head-div h1 a {
+    text-decoration: none;
+    color: silver;
+    font-family: 'Marmelad', sans-serif;
+} 
+.body-div {
+    background-image: url("https://cdn.hipwallpaper.com/i/27/72/8nCitK.jpg");
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.3);
+    background-blend-mode: lighten;
+} 
+.about-div {
+    padding: 22px 22px 22px 22px;
+    background-color: rgb(80, 97, 97);
+    color: silver;
+}
+.content-div {
+    margin-top: 30px;
+    font-family: 'Fauna One', serif;
+    font-size: 20px;
+}
+.post-div {
+    padding: 30px 0px 30px 0px;
+}
+.post-div h2 a{
+    margin-left: 50px;
+    text-decoration: none;
+    color: rgb(41, 61, 88);
+    font: bold;
+}
+.post-div p {
+    margin-left: 70px;
+    color: rgb(77, 74, 74);
+}
+.time {
+    margin-left: 55px !important;
+    font-style: italic;
+    font-size: 15px;
+}
+
+
