@@ -5,6 +5,7 @@
 <h3>New Post</h3>
     <div class="new-edit-div">
         <form method="POST">
+
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Save</button>

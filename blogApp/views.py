@@ -32,3 +32,25 @@ def post_new(request):
         form = postForm()
         stuff_for_frontend = {'form':form}
     return render(request, 'blogApp/post_new_edit.html', stuff_for_frontend)
+
+def post_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+
+    if request.method == 'POST':
+        form = postForm(request.POST, instance=post)
+
+        if form.is_valid():
+            print(request.method)
+
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect ('post_detail', pk=post.pk)
+
+    else:
+        print(request.method)
+
+        form = postForm(instance=post) #uses the current post and pass it to postForm()
+        stuff_for_frontend = {'form':form}
+    return render(request, 'blogApp/post_new_edit.html', stuff_for_frontend)
