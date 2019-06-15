@@ -5,6 +5,9 @@
         <a href=" {% url 'post_new' %} ">
             <i class="fas fa-plus fa-2x" style="margin-left: 20px; color: grey;"></i>
         </a>
+        <a href="{% url 'post_draft' %}">
+            <i class="fas fa-pencil-ruler fa-2x" style="margin-left: 30px; color: grey;"></i>
+        </a>
     {% endif %}
         
     {% for post in posts %}
@@ -12,7 +15,7 @@
     <div class="post-div">
         <p class="time">Published: {{ post.published_date }}</p>
         <h2><a href="{% url 'post_detail' pk=post.pk %}" style="text-decoration: none;">{{ post.title }}</a></h3>
-        <p>{{ post.text| linebreaksbr }}</p>
+        <p>{{ post.text|truncatechars:50|linebreaksbr }}</p>
     </div>
     
     {% endfor %}

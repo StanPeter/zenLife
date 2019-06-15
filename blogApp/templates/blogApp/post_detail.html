@@ -3,9 +3,12 @@
 {% block content %}
          
     {% if post.published_date %}
-    <div>
-        {{ post.published_date }}
-    </div>
+        
+        <p>{{ post.published_date }}</p>
+        
+    {% else %}
+        <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-primary">Publish</a>
+
     {% endif %}
 
     <a href=" {%  url 'post_edit' pk=post.pk %} "><i class="fas fa-leaf fa-2x" style="color: aqua;"></i></a>

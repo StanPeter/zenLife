@@ -54,3 +54,13 @@ def post_edit(request, pk):
         form = postForm(instance=post) #uses the current post and pass it to postForm()
         stuff_for_frontend = {'form':form}
     return render(request, 'blogApp/post_new_edit.html', stuff_for_frontend)
+
+def post_draft(request):
+    posts = Post.objects.filter(published_date__isnull=True).order_by('-created_date')
+    stuff_for_frontend = {'posts' : posts}
+    return render(request, 'blogApp/post_draft.html', stuff_for_frontend)
+
+def publish_draft(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.publish()
+    return redirect('post_detail', pk=pk)
