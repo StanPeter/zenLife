@@ -10,7 +10,8 @@
 } 
 .head-div a i {
     float: right;
-    color: rgb(106, 115, 131);
+    color: rgb(106, 147, 219);
+    padding: 15px;
 }
 .head-div a i:hover {
     color: rgb(18, 207, 166);

@@ -30,9 +30,13 @@ urlpatterns = [
  
     #127.0.0.1:8000/accounts/login
     #myApp.com/accounts/login
-    path('accounts/', include('django.contrib.auth.urls'), name='login'),
+    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
 
+    #127.0.0.1:8000/accounts/logout
+    #myApp.com/accounts/logout
+    path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]
+    #path('accounts/', include('django.contrib.auth.urls')),
 
 """
 accounts/login/ [name='login']
