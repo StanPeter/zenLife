@@ -1,0 +1,14 @@
+{% extends 'blogApp/base.html' %}
+
+{% block content %}
+
+    <h2>New comment</h2>
+    <div class="new-edit-div">
+        <form method="POST" class="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button style="float:left; margin-left:450px;" class="btn btn-primary" type="submit">Post</button>
+        </form><br><br>
+    </div>
+
+{% endblock %}

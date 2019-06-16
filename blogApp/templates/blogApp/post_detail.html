@@ -19,6 +19,22 @@
 
     <h1>{{ post.title }}</h1>
     <p>{{ post.text|linebreaksbr }}</p>
+    <hr><br>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'post_comment' pk=post.pk %}" class="btn btn-primary">add comment</a>
+    {% endif %}
+
+    {% for comment in post.comments.all %}
+
+        <p class="time"> {{ comment.created_date }}</p>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text }}</p>
+    {% empty %}
+        <p>No comments yet...</p>
+
+    {% endfor %}
 
 {% endblock %}
 
+  

@@ -51,9 +51,11 @@
     font-size: 15px;
 }
 /*for some reason fucked up, probably conflict with base.html's divs */
+/*
 .new-edit-div textarea form{
     width: 100% !important;
 }
 .new-edit-div .btn-primary {
     float: right;
 }
+*/

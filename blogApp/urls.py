@@ -18,7 +18,7 @@ urlpatterns = [
 
     #127.0.0.1:8000/post/1/edit
     #myApp.com/post/1/edit
-    path('post/<int:pk>/edit', views.post_edit, name = 'post_edit'),
+    path('post/<int:pk>/edit/', views.post_edit, name = 'post_edit'),
 
     #127.0.0.1:8000/draft
     #myApp.com/draft
@@ -26,7 +26,7 @@ urlpatterns = [
 
     #127.0.0.1:8000/post/2/publish
     #myApp.com/post/2/publish
-    path('post/<int:pk>/publish', views.publish_draft, name='post_publish'),
+    path('post/<int:pk>/publish/', views.publish_draft, name='post_publish'),
  
     #127.0.0.1:8000/accounts/login
     #myApp.com/accounts/login
@@ -35,6 +35,11 @@ urlpatterns = [
     #127.0.0.1:8000/accounts/logout
     #myApp.com/accounts/logout
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
+
+    #127.0.0.1:8000/accounts/logout
+    #myApp.com/accounts/logout
+    path('post/<int:pk>/comments/', views.add_comment, name='post_comment'),
+
 ]
     #path('accounts/', include('django.contrib.auth.urls')),
 
