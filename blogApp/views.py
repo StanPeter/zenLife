@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 from .forms import postForm
 from .models import Post
@@ -14,7 +15,8 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     stuff_for_frontend = {'post': post}
     return render(request, 'blogApp/post_detail.html', stuff_for_frontend)
-    
+
+@login_required    
 def post_new(request):
     print(request.__dict__)
 
@@ -33,6 +35,7 @@ def post_new(request):
         stuff_for_frontend = {'form':form}
     return render(request, 'blogApp/post_new_edit.html', stuff_for_frontend)
 
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
 
@@ -52,14 +55,16 @@ def post_edit(request, pk):
         print(request.method)
 
         form = postForm(instance=post) #uses the current post and pass it to postForm()
-        stuff_for_frontend = {'form':form}
+        stuff_for_frontend = {'form':form, 'post':post}
     return render(request, 'blogApp/post_new_edit.html', stuff_for_frontend)
 
+@login_required
 def post_draft(request):
     posts = Post.objects.filter(published_date__isnull=True).order_by('-created_date')
     stuff_for_frontend = {'posts' : posts}
     return render(request, 'blogApp/post_draft.html', stuff_for_frontend)
 
+@login_required
 def publish_draft(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()

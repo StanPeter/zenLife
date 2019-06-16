@@ -1,5 +1,7 @@
 {% extends 'blogApp/base.html' %}
 
+{% block title %} {{ post.title }} {% endblock %}
+
 {% block content %}
          
     {% if post.published_date %}

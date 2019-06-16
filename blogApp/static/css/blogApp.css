@@ -6,7 +6,15 @@
     text-decoration: none;
     color: silver;
     font-family: 'Marmelad', sans-serif;
+    float: left;
 } 
+.head-div a i {
+    float: right;
+    color: rgb(106, 115, 131);
+}
+.head-div a i:hover {
+    color: rgb(18, 207, 166);
+}
 .body-div {
     background-image: url("https://cdn.hipwallpaper.com/i/27/72/8nCitK.jpg");
     background-size: cover;
