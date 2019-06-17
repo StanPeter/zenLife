@@ -28,6 +28,8 @@
     {% for comment in post.comments.all %}
 
         <p class="time"> {{ comment.created_date }}</p>
+        
+        <a href="{% url 'delete_comment' pk=comment.pk %}"><i class="fas fa-trash" style="color:red;"></i></a>
         <strong>{{ comment.author }}</strong>
         <p>{{ comment.text }}</p>
     {% empty %}

@@ -40,6 +40,7 @@ urlpatterns = [
     #myApp.com/accounts/logout
     path('post/<int:pk>/comments/', views.add_comment, name='post_comment'),
 
+    path('post/<int:pk>/comments/delete/', views.delete_comment, name='delete_comment'),
 ]
     #path('accounts/', include('django.contrib.auth.urls')),
 
