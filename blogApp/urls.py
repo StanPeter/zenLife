@@ -40,7 +40,15 @@ urlpatterns = [
     #myApp.com/accounts/logout
     path('post/<int:pk>/comments/', views.add_comment, name='post_comment'),
 
+    #127.0.0.1:8000/post/2/comments/delete/
+    #myApp.com/post/2/comments/delete/
+
     path('post/<int:pk>/comments/delete/', views.delete_comment, name='delete_comment'),
+
+    #127.0.0.1:8000/post/2/comments/approve/
+    #myApp.com/post/2/comments/approve/
+    path('post/<int:pk>/comments/approve/', views.approve_comment, name='approve_comment'),
+
 ]
     #path('accounts/', include('django.contrib.auth.urls')),
 

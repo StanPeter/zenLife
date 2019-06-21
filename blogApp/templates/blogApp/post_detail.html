@@ -5,23 +5,20 @@
 {% block content %}
     
     {% if post.published_date %}
-        
         <p>{{ post.published_date }}</p>
-        
     {% else %}
         <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-primary">Publish</a>
-
     {% endif %}
 
-    {% if user.is_authenticated %}
-        <a href=" {%  url 'post_edit' pk=post.pk %} "><i class="fas fa-leaf fa-2x" style="color: aqua;"></i></a>
+    {% if user.is_authenticated or user.is_superuser %}
+        <a href=" {%  url 'post_edit' pk=post.pk %} "><i class="fas fa-leaf fa-2x" style="color: green;"></i></a>
     {% endif %}
 
     <h1>{{ post.title }}</h1>
     <p>{{ post.text|linebreaksbr }}</p>
     <hr><br>
 
-    {% if user.is_authenticated %}
+    {% if user.is_authenticated or comment.approved %}
         <a href="{% url 'post_comment' pk=post.pk %}" class="btn btn-primary">add comment</a>
     {% endif %}
 
@@ -29,12 +26,18 @@
 
         <p class="time"> {{ comment.created_date }}</p>
         
-        <a href="{% url 'delete_comment' pk=comment.pk %}"><i class="fas fa-trash" style="color:red;"></i></a>
         <strong>{{ comment.author }}</strong>
+
+        {% if user.is_superuser %}
+            <a href="{% url 'delete_comment' pk=comment.pk %}"><i class="fas fa-trash" style="color:red;"></i></a>
+            {% endif %}
+        {% if not comment.approved and user.is_superuser %}
+            <a href="{% url 'approve_comment' pk=comment.pk %}"><i class="fas fa-check" style="color: green;"></i></a>
+        {% endif %}
+
         <p>{{ comment.text }}</p>
     {% empty %}
         <p>No comments yet...</p>
-
     {% endfor %}
 
 {% endblock %}
