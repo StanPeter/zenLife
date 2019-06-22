@@ -59,6 +59,12 @@ def post_edit(request, pk):
     return render(request, 'blogApp/post_new_edit.html', stuff_for_frontend)
 
 @login_required
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('post_list')
+
+@login_required
 def post_draft(request):
     posts = Post.objects.filter(published_date__isnull=True).order_by('-created_date')
     stuff_for_frontend = {'posts' : posts}

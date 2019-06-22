@@ -13,7 +13,10 @@
 
     {% if user.is_authenticated or user.is_superuser %}
         <a href=" {%  url 'post_edit' pk=post.pk %} "><i class="fas fa-leaf fa-2x" style="color: green;"></i></a>
-    {% endif %}
+        <a href=" {% url 'post_delete' pk=post.pk %} " style="color: red; padding: 10px;" 
+            onclick="return confirm('Are you sure you want to delete this post?')">
+        <i class="fas fa-minus-square fa-2x"></i></a>
+        {% endif %}
 
     <h1>{{ post.title }}</h1>
     <p>{{ post.text| markdown | safe |linebreaksbr }}</p>
