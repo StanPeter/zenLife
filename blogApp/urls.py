@@ -53,6 +53,9 @@ urlpatterns = [
     #myApp.com/post/2/comments/approve/
     path('post/<int:pk>/comments/approve/', views.approve_comment, name='approve_comment'),
 
+    #127.0.0.1:8000/signup
+    #myApp.com/signup
+    path('signup/', views.singUp, name="sign_up"),
 ]
     #path('accounts/', include('django.contrib.auth.urls')),
 

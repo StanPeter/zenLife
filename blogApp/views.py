@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth import login
 
-from .forms import postForm, commentForm
+from .forms import postForm, commentForm, userForm
 from .models import Post, Comment
 
 # Create your views here.
@@ -104,3 +106,15 @@ def approve_comment(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.approve()
     return redirect('post_detail', pk=comment.post.pk)
+
+def singUp(request):
+    if request.method == 'POST':
+        form = userForm(request.POST)
+        if form.is_valid():
+            new_user = User.objects.create_user(**form.cleaned_data)
+            login(request, new_user)
+            return redirect('/')
+    else:
+        form = userForm()
+    return render(request, 'registration/sign_up.html', {'form':form})
+
