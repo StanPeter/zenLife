@@ -1,4 +1,5 @@
 {% extends 'blogApp/base.html' %}
+{% load markdownify %}
 
 {% block title %} {{ post.title }} {% endblock %}
 
@@ -15,7 +16,7 @@
     {% endif %}
 
     <h1>{{ post.title }}</h1>
-    <p>{{ post.text|linebreaksbr }}</p>
+    <p>{{ post.text| markdown | safe |linebreaksbr }}</p>
     <hr><br>
 
     {% if user.is_authenticated or comment.approved %}
@@ -35,7 +36,7 @@
             <a href="{% url 'approve_comment' pk=comment.pk %}"><i class="fas fa-check" style="color: green;"></i></a>
         {% endif %}
 
-        <p>{{ comment.text }}</p>
+        <p>{{ comment.text | markdown | safe | linebreaksbr }}</p>
     {% empty %}
         <p>No comments yet...</p>
     {% endfor %}
