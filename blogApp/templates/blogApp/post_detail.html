@@ -41,7 +41,7 @@
 
         <p>{{ comment.text | markdown | safe | linebreaksbr }}</p>
     {% empty %}
-        <p>No comments yet...</p>
+        <br><br><br><p>No comments yet...</p><br>
     {% endfor %}
 
 {% endblock %}

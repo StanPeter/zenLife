@@ -1,61 +1,119 @@
-.head-div {
-    padding: 27px 27px 27px 45px;
-    background-color: rgb(80, 97, 97);
+body {
+    background-color: rgb(240, 240, 240);
 }
-.head-div h1 a {
-    text-decoration: none;
-    color: silver;
-    font-family: 'Marmelad', sans-serif;
+.nav-div {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+}
+.nav-div ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-div ul li {
     float: left;
-} 
-.head-div a i {
-    float: right;
-    color: rgb(106, 147, 219);
-    padding: 15px;
 }
-.head-div a i:hover {
+.nav-div ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 15px 15px 3px 15px;
+    margin-left: 20px;
+    font-size: 25px;
+    color: rgb(59, 53, 53);
+}
+.nav-div ul li a:hover{
+    color: rgb(87, 136, 201);
+    background-image: linear-gradient(to right, #d534e9 50%, transparent 50%);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: 6px 3px;
+}
+.nav-div ul li a:active{
+    color: rgb(87, 136, 201);
+    background-image: linear-gradient(to right, #34e96a 50%, transparent 50%);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: 6px 3px;
+}
+.logo a {
+    color: rgb(105, 87, 87);
+    font-size: 50px;
+    margin: 0px 80px 0px 40px;
+    text-decoration: none;
+    font-family: 'Barriecito', cursive;
+    text-shadow: 2px 2px 3px rgb(105, 87, 87);
+    opacity: 0.8;
+}
+.logo a i{
+    color: rgb(86, 211, 128);
+    text-shadow: none;
+}
+.nav-login a i {
+    padding: 15px;
+    margin-left: 180px;
+    color: rgb(106, 147, 219);
+}
+.nav-login a i:hover {
     color: rgb(18, 207, 166);
 }
-.body-div {
-    background-image: url("https://cdn.hipwallpaper.com/i/27/72/8nCitK.jpg");
-    background-size: cover;
-    background-color: rgba(255, 255, 255, 0.3);
-    background-blend-mode: lighten;
-} 
+.nav-login p{
+    font-size: 25px;
+    padding: 15px;
+    margin-left: 130px;
+    color: rgb(59, 53, 53);
+    opacity: 0.8;
+}
+.nav-login p a{
+    text-decoration: none;
+    opacity: 0.8;
+}
+.nav-login p a:hover{
+    color: rgb(18, 207, 166);
+}
 .about-div {
+    vertical-align: bottom;
     padding: 22px 22px 22px 22px;
     background-color: rgb(80, 97, 97);
-    color: silver;
+    color: rgb(228, 220, 220);
 }
 .content-div {
-    margin-top: 30px;
+    margin: 40px 100px;
+    padding: 20px 0px;
     font-family: 'Fauna One', serif;
     font-size: 20px;
+}
+.content-div a i{
+    font-size: 30px;
+    padding: 10px;
+    color: rgb(70, 119, 204);
+}
+.content-div a i:hover{
+    text-shadow: 3px 3px 6px rgb(18, 207, 166);
 }
 .post-div {
     padding: 30px 0px 30px 0px;
 }
 .post-div h2 a{
-    margin-left: 50px;
     text-decoration: none;
     color: rgb(41, 61, 88);
     font: bold;
 }
 .post-div p {
-    margin-left: 70px;
+    margin-left: 20px;
     color: rgb(77, 74, 74);
 }
+.post-div a:hover {
+    text-decoration: none;
+}
 .time {
-    margin-left: 55px !important;
+    margin-left: 5px !important;
     font-style: italic;
     font-size: 15px;
 }
-/*for some reason fucked up, probably conflict with base.html's divs */
-/*
 .new-edit-div textarea form{
     width: 100% !important;
 }
 .new-edit-div .btn-primary {
     float: right;
 }
-*/

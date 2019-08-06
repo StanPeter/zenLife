@@ -9,8 +9,8 @@
 
     <div class="post-div">
         <p class="time">Published: {{ post.published_date }}</p>
-        <h2><a href="{% url 'post_detail' pk=post.pk %}" style="text-decoration: none;">{{ post.title }}</a></h3>
-        <p>{{ post.text|truncatechars:50|linebreaksbr }}</p>
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+        <p>{{ post.text|truncatechars:150|linebreaksbr }}</p>
         <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
     </div>
     
