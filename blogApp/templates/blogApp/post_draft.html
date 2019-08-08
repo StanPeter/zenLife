@@ -9,6 +9,8 @@
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p> {{ post.text|truncatechars:50|linebreaksbr }} </p>
         </div>
+    {% empty %}
+        <p>You have not written any draft yet</p><br><br><br>
     {% endfor %}
 
 {% endblock %}
