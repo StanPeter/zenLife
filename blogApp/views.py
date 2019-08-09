@@ -118,3 +118,13 @@ def singUp(request):
         form = userForm()
     return render(request, 'registration/sign_up.html', {'form':form})
 
+def articles(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    stuff_for_frontend = {'posts': posts}
+    return render(request, 'blogApp/articles.html', stuff_for_frontend)
+
+def books(request):
+    return render(request, 'blogApp/books.html')
+
+def about(request):
+    return render(request, 'blogApp/about.html')

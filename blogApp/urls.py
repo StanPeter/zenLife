@@ -56,6 +56,15 @@ urlpatterns = [
     #127.0.0.1:8000/signup
     #myApp.com/signup
     path('signup/', views.singUp, name="sign_up"),
+
+    #myApp.com/articles
+    path('articles/', views.articles, name="articles"),
+
+    #myApp.com/books
+    path('books/', views.books, name="books"),
+
+    #myApp.com/about
+    path('about/', views.about, name="about"),
 ]
     #path('accounts/', include('django.contrib.auth.urls')),
 

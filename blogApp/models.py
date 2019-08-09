@@ -29,7 +29,7 @@ class Comment(models.Model):
     author = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
     text = models.TextField()
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(null=True, blank=True)
 
     def approve(self):
         self.approved = True

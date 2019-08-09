@@ -3,3 +3,4 @@
 *pycache*
 *migrations*
 *log*
+mysite/__pycache__/*
