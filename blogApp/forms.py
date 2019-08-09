@@ -8,7 +8,7 @@ from crispy_forms.layout import Submit
 class postForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'text')
+        fields = ('title', 'text',)
 
 class commentForm(forms.ModelForm):
     class Meta:

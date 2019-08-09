@@ -5,44 +5,56 @@
 
 {% block content %}
     
-    {% if post.published_date %}
-        <p>{{ post.published_date }}</p>
-    {% else %}
-        <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-primary">Publish</a>
-    {% endif %}
-
-    {% if user.is_authenticated or user.is_superuser %}
-        <a href=" {%  url 'post_edit' pk=post.pk %} "><i class="fas fa-leaf fa-2x" style="color: green;"></i></a>
-        <a href=" {% url 'post_delete' pk=post.pk %} " style="color: red; padding: 10px;" 
-            onclick="return confirm('Are you sure you want to delete this post?')">
-        <i class="fas fa-minus-square fa-2x"></i></a>
-        {% endif %}
-
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.text| markdown | safe |linebreaksbr }}</p>
-    <hr><br>
-
-    {% if user.is_authenticated or comment.approved %}
-        <a href="{% url 'post_comment' pk=post.pk %}" class="btn btn-primary">add comment</a>
-    {% endif %}
-
-    {% for comment in post.comments.all %}
-
-        <p class="time"> {{ comment.created_date }}</p>
+    <div class="post-div">
         
-        <strong>{{ comment.author }}</strong>
+        {% if user.is_authenticated or user.is_superuser %}
+            <a href=" {%  url 'post_edit' pk=post.pk %} "><i class="fas fa-leaf fa-2x" style="color: rgb(53, 138, 53);"></i></a>
+            <a href=" {% url 'post_delete' pk=post.pk %} " onclick="return confirm('Are you sure you want to delete this post?')">
+                <i class="fas fa-minus-square fa-2x" style="color: rgb(197, 48, 48)" ></i>
+            </a>
+        {% endif %}
+        {% if not post.published_date %}
+            <a href="{% url 'post_publish' pk=post.pk %}"><i class="fas fa-upload" style="color: rgb(79, 119, 187);"></i></a>
+        {% endif %}
+        
+        <h2>{{ post.title }}</h2>
 
-        {% if user.is_superuser %}
-            <a href="{% url 'delete_comment' pk=comment.pk %}"><i class="fas fa-trash" style="color:red;"></i></a>
-            {% endif %}
-        {% if not comment.approved and user.is_superuser %}
-            <a href="{% url 'approve_comment' pk=comment.pk %}"><i class="fas fa-check" style="color: green;"></i></a>
+        {% if post.published_date %}
+            <p class="time">{{ post.published_date }}</p>
         {% endif %}
 
-        <p>{{ comment.text | markdown | safe | linebreaksbr }}</p>
-    {% empty %}
-        <br><br><br><p>No comments yet...</p><br>
-    {% endfor %}
+    
+        <p>{{ post.text| markdown | safe |linebreaksbr }}</p>
+        <hr><br>
+    
+        {% if user.is_authenticated or comment.approved %}
+            <a href="{% url 'post_comment' pk=post.pk %}" class="btn btn-primary">add comment</a>
+        {% endif %}
+
+    </div>
+    
+    <div class="comments">
+
+        {% for comment in post.comments.all %}
+    
+            <p class="time"> {{ comment.created_date }}</p>
+            
+            <strong>{{ comment.author }}</strong>
+    
+            {% if user.is_superuser %}
+                <a href="{% url 'delete_comment' pk=comment.pk %}"><i class="fas fa-trash" style="color:red;"></i></a>
+                {% endif %}
+            {% if not comment.approved and user.is_superuser %}
+                <a href="{% url 'approve_comment' pk=comment.pk %}"><i class="fas fa-check" style="color: green;"></i></a>
+            {% endif %}
+    
+            <p>{{ comment.text | markdown | safe | linebreaksbr }}</p>
+        {% empty %}
+            <br><br><br><p>No comments yet...</p><br>
+        {% endfor %}
+
+    </div>
+
 
 {% endblock %}
 

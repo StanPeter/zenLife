@@ -2,15 +2,18 @@ body {
     background-color: rgb(240, 240, 240);
 }
 /* CSS to the navigation bar */
-.nav-div {
+.nav-wrapper {
     background-color: white;
-    padding: 20px;
+    width: 100%;
+    padding: 3px;
+}
+.nav-div {
     display: flex;
+    margin: 0px 35px;
 }
 .nav-div ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    padding-right: 100px;
 }
 .nav-div ul li {
     float: left;
@@ -18,9 +21,10 @@ body {
 .nav-div ul li a {
     display: block;
     text-decoration: none;
-    padding: 15px 15px 3px 15px;
-    margin-left: 20px;
-    font-size: 25px;
+    padding: 25px 25px 3px 25px;
+    padding-right: 30px;
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
     color: rgb(59, 53, 53);
 }
 .nav-div ul li a:hover{
@@ -40,7 +44,7 @@ body {
 .logo a {
     color: rgb(105, 87, 87);
     font-size: 50px;
-    margin: 0px 80px 0px 40px;
+    padding-right: 100px;
     text-decoration: none;
     font-family: 'Barriecito', cursive;
     text-shadow: 2px 2px 3px rgb(105, 87, 87);
@@ -51,19 +55,19 @@ body {
     text-shadow: none;
 }
 .nav-login a i {
-    padding: 15px;
-    margin-left: 180px;
     color: rgb(106, 147, 219);
+    padding: 20px 10px;
 }
 .nav-login a i:hover {
     color: rgb(18, 207, 166);
 }
 .nav-login p{
-    font-size: 25px;
-    padding: 15px;
-    margin-left: 130px;
+    font-size: 20px;
     color: rgb(59, 53, 53);
     opacity: 0.8;
+    padding: 20px 10px;
+    float: right;
+    margin-right: 0px;
 }
 .nav-login p a{
     text-decoration: none;
@@ -72,14 +76,20 @@ body {
 .nav-login p a:hover{
     color: rgb(18, 207, 166);
 }
+.nav-else{
+    padding-left: 200px;
+}
 /* CSS to the content from the base {%block content%} */
 .content-wrapper {
     text-align: center;
+    margin-bottom: 40px;
+    margin-top: 60px;   
 }
 .content-div {
     display: inline-block;
+    text-align: left;
     padding: 20px 0px;
-    font-family: 'Fauna One', serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 20px;
 }
 .content-div a i{
@@ -120,15 +130,23 @@ body {
     font-size: 15px;
 }
 .post-div {
-    padding: 30px 0px 30px 0px;
+    padding: 30px 0px;
+}
+.post-div a i {
+    padding: 20px;
+}
+.post-div h2 {
+    padding: 10px 20px 20px 10px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+    color: rgb(60, 88, 124);
 }
 .post-div h2 a{
     text-decoration: none;
-    color: rgb(41, 61, 88);
     font: bold;
+    color: rgb(60, 88, 124);
 }
 .post-div p {
-    margin-left: 20px;
     color: rgb(77, 74, 74);
 }
 .post-div a:hover {
@@ -138,6 +156,13 @@ body {
     margin-left: 5px !important;
     font-style: italic;
     font-size: 15px;
+}
+.comments a i{
+    font-size: 20px;
+    padding: 5px;
+}
+.comments p{
+
 }
 .new-edit-div textarea form{
     width: 100% !important;
