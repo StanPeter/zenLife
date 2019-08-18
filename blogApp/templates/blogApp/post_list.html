@@ -21,7 +21,7 @@
         {% if posts.has_previous %}
         <a href="?page=1">&laquo;</a>
         {% endif %}
-    
+        
         {% for i in page_range %}
             <a href="?page={{ i }}"> {{ i }} </a>
         {% endfor %}

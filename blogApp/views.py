@@ -12,7 +12,7 @@ from .models import Post, Comment
 def post_list(request):    #templates/blogApp/post_list.html but tempaltes is automatic
     all_posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     
-    paginator = Paginator(all_posts, 6)
+    paginator = Paginator(all_posts, 2)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
 
@@ -20,6 +20,8 @@ def post_list(request):    #templates/blogApp/post_list.html but tempaltes is au
     for i in range(posts.number-3, posts.number+4):
         if i >= 1 and i<= posts.paginator.num_pages:
             page_range.append(i)
+    if len(page_range) < 2:
+        page_range = []
 
     stuff_for_frontend = {'posts': posts, 'page_range':page_range}
     return render(request, 'blogApp/post_list.html', stuff_for_frontend)
