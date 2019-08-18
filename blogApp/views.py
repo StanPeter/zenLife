@@ -3,14 +3,25 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import login
+from django.core.paginator import Paginator
 
 from .forms import postForm, commentForm, userForm
 from .models import Post, Comment
 
 # Create your views here.
 def post_list(request):    #templates/blogApp/post_list.html but tempaltes is automatic
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    stuff_for_frontend = {'posts': posts}
+    all_posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    
+    paginator = Paginator(all_posts, 6)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+
+    page_range = []
+    for i in range(posts.number-3, posts.number+4):
+        if i >= 1 and i<= posts.paginator.num_pages:
+            page_range.append(i)
+
+    stuff_for_frontend = {'posts': posts, 'page_range':page_range}
     return render(request, 'blogApp/post_list.html', stuff_for_frontend)
 
 def post_detail(request, pk):

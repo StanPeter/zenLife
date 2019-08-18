@@ -1,3 +1,9 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    min-height: 100%;
+    height: 100%;
+  }
 body {
     background-color: rgb(240, 240, 240);
 }
@@ -169,4 +175,20 @@ body {
 }
 .new-edit-div .btn-primary {
     float: right;
+}
+.pagination {
+    display: inline-block;
+}
+.pagination a{
+    padding: 0.8em;
+    float: left;
+    text-decoration: none;
+    color: rgb(59, 53, 53);
+}
+.pagination a:hover{
+    color: rgb(87, 136, 201);
+}
+.pagination a.active{
+}
+.pagination a:hover:not(.active){
 }

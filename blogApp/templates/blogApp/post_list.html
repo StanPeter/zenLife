@@ -13,8 +13,23 @@
         <p>{{ post.text|truncatechars:400|linebreaksbr }}</p>
         <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
     </div>
-    
+
     {% endfor %}
 
+    <div class="pagination">
 
+        {% if posts.has_previous %}
+        <a href="?page=1">&laquo;</a>
+        {% endif %}
+    
+        {% for i in page_range %}
+            <a href="?page={{ i }}"> {{ i }} </a>
+        {% endfor %}
+    
+        {% if posts.has_next %}
+            <a href="?page={{ posts.paginator.num_pages }}">&raquo;</a>
+        {% endif %}
+
+    </div>
+   
 {% endblock  %}

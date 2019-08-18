@@ -1,6 +1,6 @@
 This is a Django blogging app called Zen Life
 
-Languages + Technologies used: Django, Python3, GIT, CSS3, HTML5, Bootstrap3
+Languages + Technologies used: Django, Python3, GIT, CSS3, HTML5, Bootstrap
 
 database used within Django
 
