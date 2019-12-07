@@ -1,72 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
 html, body {
-    margin: 0px;
-    padding: 0px;
     min-height: 100%;
     height: 100%;
+    width: 100%;
   }
+
 body {
     background-color: rgb(240, 240, 240);
+    font-size: 16px;
 }
-/* CSS to the navigation bar */
-.nav-wrapper {
-    background-color: white;
-    width: 100%;
-    padding: 3px;
+
+/* bootstrap navbar */
+.navbar {
+    background: #fff;
 }
-.nav-div {
-    display: flex;
-    margin: 0px 35px;
-}
-.nav-div ul {
-    list-style: none;
-    padding-right: 100px;
-}
-.nav-div ul li {
-    float: left;
-}
+/* custom navbar */
 .nav-div ul li a {
-    display: block;
-    text-decoration: none;
-    padding: 25px 25px 3px 25px;
-    padding-right: 30px;
-    font-size: 20px;
+    font-size: 1.3rem;
     font-family: 'Roboto Condensed', sans-serif;
     color: rgb(59, 53, 53);
 }
-.nav-div ul li a:hover{
+.nav-div ul li a:hover, .nav-div ul li a:active{
     color: rgb(86, 211, 128);
     background-image: linear-gradient(to right, #34e96a 50%, transparent 50%);
     background-position: bottom;
     background-repeat: repeat-x;
     background-size: 6px 3px;
 }
+
 .nav-div ul li a:active{
-    color: rgb(87, 136, 201);
-    background-image: linear-gradient(to right, #34e96a 50%, transparent 50%);
-    background-position: bottom;
-    background-repeat: repeat-x;
-    background-size: 6px 3px;
+    color: rgb(87, 136, 201) !important;
 }
-.logo a {
+
+.logo {
     color: rgb(105, 87, 87);
-    font-size: 50px;
-    padding-right: 100px;
-    text-decoration: none;
+    font-size: 3rem;
+    padding-right: 10%;
     font-family: 'Barriecito', cursive;
     text-shadow: 2px 2px 3px rgb(105, 87, 87);
     opacity: 0.8;
 }
-.logo a i{
+.logo:hover {
+    text-decoration: none;
+    color: rgb(105, 87, 87);
+}
+
+.logo i{
     color: rgb(86, 211, 128);
     text-shadow: none;
 }
+
 .nav-login a i {
     color: rgb(106, 147, 219);
     padding: 20px 10px;
 }
+
 .nav-login a i:hover {
     color: rgb(18, 207, 166);
 }
+
 .nav-login p{
     font-size: 20px;
     color: rgb(59, 53, 53);
@@ -191,4 +187,46 @@ body {
 .pagination a.active{
 }
 .pagination a:hover:not(.active){
+}
+
+
+@media only screen and (min-width: 600px){
+
+}
+
+
+
+/* navbar, delete later */
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 768) {
+  
 }

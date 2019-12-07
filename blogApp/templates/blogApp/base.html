@@ -17,32 +17,41 @@
 </head>
 
 <body>
-    <div class="nav-wrapper">
-        <div class="nav-div">
-            
-            <div class="logo">
-                <a href=" {% url 'post_list' %} ">Zen <i class="fas fa-yin-yang"></i> Life</a>
-            </div>
+    <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand logo" href=" {% url 'post_list' %} ">Zen <i class="fas fa-yin-yang"></i> Life</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     
-            <ul>
-                <li><a href=" {% url 'post_list' %}">Recent</a></li>
-                <li><a href=" {% url 'articles' %} ">Articles</a></li>
-                <li><a href=" {% url 'books' %} ">Books</a></li>
-                <li><a href=" {% url 'about' %} ">About</a></li>
+        <div class="collapse navbar-collapse nav-div" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href=" {% url 'post_list' %}">Recent</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'articles' %}">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'books' %}">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'about' %}">About</a>
+                </li>
             </ul>
-            
-            <div class="nav-login">
-                {% if user.is_authenticated %}
-                    <a href=" {% url 'post_new' %} "><i class="fas fa-plus fa-2x"></i></a>
-                    <a href="{% url 'post_draft' %}"><i class="fab fa-firstdraft fa-2x"></i></a>        
-                    <p> {{ user.username|truncatechars:10 }} <small>( <a href="{% url 'logout' %}?next={% url 'post_list' %}">Logout</a> )</small></p>
-                {% else %}
-                    <a href="{% url 'login' %}" class="nav-else"><i class="fas fa-sign-in-alt fa-2x"></i></a>
-                {% endif %}
-            </div>
-
         </div>
-    </div>
+
+        <div class="nav-login">
+            {% if user.is_authenticated %}
+            <a href=" {% url 'post_new' %} "><i class="fas fa-plus fa-2x"></i></a>
+            <a href="{% url 'post_draft' %}"><i class="fab fa-firstdraft fa-2x"></i></a>
+            <p> {{ user.username|truncatechars:10 }} <small>( <a href="{% url 'logout' %}?next={% url 'post_list' %}">Logout</a>
+                    )</small></p>
+            {% else %}
+            <a href="{% url 'login' %}" class="nav-else"><i class="fas fa-sign-in-alt fa-2x"></i></a>
+            {% endif %}
+        </div>
+    </nav>
 
     <div class="content-wrapper">
 
@@ -99,6 +108,16 @@
         </div>
         <p>Contact | Copyright © 2018 | Terms and Privacy | Thanks</p>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'js/blogApp.js' %}"></script>
 
 </body>
 </html>
