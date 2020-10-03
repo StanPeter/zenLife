@@ -11,7 +11,7 @@
         <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
         <p class="time">Published: {{ post.published_date }}</p>
         <p>{{ post.text|truncatechars:400|linebreaksbr }}</p>
-        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+        <a href="{% url 'post_detail' pk=post.pk %}#comments">Comments: {{ post.approved_comments.count }}</a>
     </div>
 
     {% endfor %}

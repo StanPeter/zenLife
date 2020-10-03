@@ -25,7 +25,7 @@
 
     
         <p>{{ post.text| markdown | safe |linebreaksbr }}</p>
-        <hr><br>
+        <hr id="comments"><br>
     
         {% if user.is_authenticated  %}
             <a href="{% url 'post_comment' pk=post.pk %}" class="btn btn-primary">add comment</a>

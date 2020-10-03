@@ -23,6 +23,10 @@ body {
 }
 
 /* custom navbar */
+.nav-div ul li {
+    padding-right: 6% !important;
+}
+
 .nav-div ul li a {
     font-size: 1.25rem;
     font-family: 'Roboto Condensed', sans-serif;
@@ -241,6 +245,11 @@ not working yet
 #copyright a {
     text-decoration: none;
     color: silver;
+}
+
+/* custom */
+.separator {
+    height: 32rem;
 }
 
 /* media queries */
