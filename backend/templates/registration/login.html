@@ -1,0 +1,17 @@
+{% extends 'blogApp/base.html' %}
+
+{% block content %}
+
+    <div class="separator">
+
+        <h2>Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form> <br>
+        <p>Don't have an account? Sign up <a href="{% url 'sign_up' %}">here</a></p><br><br>
+        
+    </div>
+    
+{% endblock %}

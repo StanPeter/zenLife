@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+html, body {
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+  }
+
+body {
+    background-color: rgb(240, 240, 240);
+    font-size: 16px;
+}
+
+/* bootstrap navbar */
+.navbar {
+    background: #fff;
+}
+
+/* custom navbar */
+.nav-div ul li {
+    padding-right: 6% !important;
+}
+
+.nav-div ul li a {
+    font-size: 1.25rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: rgb(59, 53, 53);
+}
+.nav-div ul li a:hover, .nav-div ul li a:active{
+    color: rgb(86, 211, 128);
+    background-image: linear-gradient(to right, #34e96a 50%, transparent 50%);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: 6px 3px;
+}
+
+.nav-div ul li a:active{
+    color: rgb(87, 136, 201) !important;
+}
+
+.logo {
+    color: rgb(105, 87, 87);
+    font-size: 2.5rem;
+    padding-right: 10%;
+    font-family: 'Barriecito', cursive;
+    text-shadow: 2px 2px 3px rgb(105, 87, 87);
+    opacity: 0.8;
+}
+.logo:hover {
+    text-decoration: none;
+    color: rgb(105, 87, 87);
+}
+
+.logo i{
+    color: rgb(86, 211, 128);
+    text-shadow: none;
+}
+
+.nav-login {
+    display: none;
+}
+
+.nav-login a i {
+    color: rgb(106, 147, 219);
+    padding: 1.9rem 0.425rem;
+    font-size: 1.8rem;
+}
+
+.nav-login a i:hover {
+    color: rgb(18, 207, 166);
+}
+
+.nav-login p{
+    font-size: 1.25rem;
+    color: rgb(59, 53, 53);
+    opacity: 0.8;
+    padding: 1.25rem 0.625rem;
+    float: right;
+    margin: 0;
+}
+.nav-login p a{
+    text-decoration: none;
+    opacity: 0.8;
+}
+.nav-login p a:hover{
+    color: rgb(18, 207, 166);
+}
+.nav-else{
+    padding-left: 8%;
+}
+
+/* post list */
+.content-wrapper {
+    text-align: center;
+    margin-top: 7%
+}
+
+/* 
+not working yet
+.tooltip .tooltip-inner {
+    background-color: green;
+}
+
+.tooltip .arrow::before {
+    border-left-color: green;
+} */
+
+
+.content-div {
+    display: inline-block;
+    text-align: left;
+    padding: 1.25rem 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.25rem;
+}
+.content-div a i{
+    font-size: 1.875rem;
+    padding: 0.625rem;
+    color: rgb(70, 119, 204);
+}
+.content-div a i:hover{
+    text-shadow: 3px 3px 6px rgb(18, 207, 166);
+}
+
+/* posts */
+
+.post-div {
+    padding: 0.625rem 0;
+}
+.post-div a i {
+    padding: 1.25rem;
+}
+.post-div h2 {
+    padding: 0.625rem 1.25rem 1.25rem 0.625rem;
+    font-family: 'Indie Flower', cursive;
+    font-size: 2.5rem;
+    color: rgb(60, 88, 124);
+}
+.post-div h2 a{
+    text-decoration: none;
+    font: bold;
+    color: rgb(60, 88, 124);
+}
+.post-div p {
+    color: rgb(77, 74, 74);
+}
+.post-div a:hover {
+    text-decoration: none;
+}
+.time {
+    margin-left: 5px !important;
+    font-style: italic;
+    font-size: 0.9375rem;
+}
+.comments a i{
+    font-size: 1.25rem;
+    padding: 5px;
+}
+.comments p{
+
+}
+.new-edit-div textarea form{
+    width: 100% !important;
+}
+.new-edit-div .btn-primary {
+    float: right;
+}
+
+.no-draft {
+    padding: 10% 0 30%;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+}
+
+/* pagination */
+.pagination {
+    display: inline-block;
+}
+.pagination a{
+    padding: 0.8em;
+    float: left;
+    text-decoration: none;
+    color: rgb(59, 53, 53);
+}
+.pagination a:hover{
+    color: rgb(87, 136, 201);
+}
+.pagination a.active{
+}
+.pagination a:hover:not(.active){
+}
+
+
+/* footer */
+.footer-wrapper {
+    background-color: rgb(80, 97, 97);
+    width: 100%;
+}
+
+.footer-wrapper p{
+    text-align: center;
+    color: silver;
+    padding-bottom: 1rem !important;
+    margin: 0;
+}
+.footer-div {
+    color: rgb(228, 220, 220);
+    margin: 1rem 1.8rem;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    padding-top: 1rem;
+}
+.footer-div ul{
+    flex-flow: column;
+    list-style: none;
+    margin: 0.5rem 1rem;
+}
+
+.footer-div ul li{
+    padding: 3px;
+}
+.footer-div ul li a{
+    color: silver;
+    text-decoration: none;
+    font-size: 0.9375rem;
+}
+
+.contact-info {
+}
+
+.contact-info h2 {
+}
+
+.contact-info a i {
+    padding: 5px;
+}
+
+#copyright a {
+    text-decoration: none;
+    color: silver;
+}
+
+/* custom */
+.separator {
+    height: 32rem;
+}
+
+/* media queries */
+@media only screen and (min-width: 768px){
+    .nav-login {
+        display: flex;
+        align-items: center;
+    }
+    .nav-user-item {
+        display: none;
+    }
+}
+
+@media (max-width: 930px) {
+    html, body {
+        font-size: 14px !important;
+    }
+    .logo {
+        padding-right: 6%;
+    }
+
+    .separator {
+        height: 42rem;
+    }
+}
