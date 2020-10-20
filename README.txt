@@ -24,3 +24,7 @@ FRONTEND
 4. Display + add some data from/to BE
 5. Add authentication
 6. Add redux to it
+
+
+
+PS: BE needs to run on 8081 port

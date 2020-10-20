@@ -3,22 +3,30 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 from rest_framework import routers
-from .api import PostViewSet, CommentViewSet
+from .api import PostViewSet, CommentViewSet, UserViewSet
 
 router = routers.DefaultRouter()
-router.register('api/posts', PostViewSet, 'posts')
+router.register(r'posts', PostViewSet, 'posts')
+router.register(r'users', UserViewSet)
 # router.register('comments/', CommentViewSet, 'comments')
 
+
+# GET   posts
+# POST  posts
+# GET   posts/{id}
+# PUT   doesnt work posts/{id}
+# DELETE doesnt work posts/{id}
 
 urlpatterns = [
     # path('forgot-password', ForgotPasswordFormView.as_view()),
     path('', include(router.urls)),
+    # path('api-auth/', include())
 ]
 
 # urlpatterns = [
-#     #myApp.com 
+#     #myApp.com
 #     path('', views.post_list, name = 'post_list'),
-    
+
 #     # myApp.com/post/1
 #     path('post/<int:pk>/', views.post_detail, name='post_detail'),
 
@@ -36,7 +44,7 @@ urlpatterns = [
 
 #     #myApp.com/post/2/publish
 #     path('post/<int:pk>/publish/', views.publish_draft, name='post_publish'),
- 
+
 #     #myApp.com/accounts/login
 #     path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
 

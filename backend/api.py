@@ -1,13 +1,23 @@
-from .models import Post, Comment
+from .models import Post, Comment, User
 from rest_framework import viewsets, permissions
-from .serializer import PostSerializer, CommentSerializer
+from .serializer import PostSerializer, CommentSerializer, UserSerializer
 
-# Viewsets provide great abstraction and make things much easier especially if your 
-# api project is large with many endpoints and you want consistency throughout your 
+# Viewsets provide great abstraction and make things much easier especially if your
+# api project is large with many endpoints and you want consistency throughout your
 # project
 
 
-#view set for Post
+# ViewSets define the view behavior.
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    permission_classes = [
+        permissions.AllowAny
+    ]
+    serializer_class = UserSerializer
+
+
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     permission_classes = [
@@ -21,7 +31,7 @@ class PostViewSet(viewsets.ModelViewSet):
     # def perform_create(self, serializer):
     #     serializer.save(owner=self.request.user)
 
-#view set for Comment
+
 class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     permission_classes = [
@@ -34,7 +44,6 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     # def perform_create(self, serializer):
     #     serializer.save(owner=self.request.user)
-
 
 
 # from api.models import Match, Sport, Selection, Market

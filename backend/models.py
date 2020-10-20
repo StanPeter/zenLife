@@ -4,8 +4,10 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class Post(models.Model):
-    author = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE, null=True)
+    author = models.ForeignKey(
+        User, related_name='posts', on_delete=models.CASCADE, null=True)
     username = models.CharField(max_length=50, null=True)
     title = models.CharField(max_length=250)
     text = models.TextField()
@@ -23,8 +25,11 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments', null=True) #if post deleted the comments will be also deleted
+    # if post deleted the comments will be also deleted
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments', null=True)
     author = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
     text = models.TextField()
@@ -61,7 +66,7 @@ class Comment(models.Model):
 #     startTime = models.DateTimeField()
 #     sport = models.ForeignKey(Sport, related_name='matches', on_delete =models.CASCADE)
 #     market = models.ForeignKey(Market, related_name='matches', on_delete =models.CASCADE)
-#     
+#
 #     class Meta:
 #         ordering = ('startTime',)
 #         verbose_name_plural = 'Matches'
