@@ -6,6 +6,7 @@ db.sqlite3
 *.pyc
 webpack-stats.json
 assets/bundles
+backend/migrations/*
 
 # Logs
 logs
