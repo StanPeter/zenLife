@@ -8,7 +8,9 @@ from .serializer import PostSerializer, CommentSerializer, UserSerializer
 
 
 # ViewSets define the view behavior.
-
+# Using ViewSet you don't have to create separate views for
+# getting list of objects and detail of one object.
+# ViewSet will handle for you in consistent way both list and detail.
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()

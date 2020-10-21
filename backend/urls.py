@@ -10,6 +10,7 @@ router.register(r'posts', PostViewSet, 'posts')
 router.register(r'users', UserViewSet)
 # router.register('comments/', CommentViewSet, 'comments')
 
+# Routers provide an easy way of automatically determining the URL conf.
 
 # GET   posts
 # POST  posts
@@ -19,7 +20,7 @@ router.register(r'users', UserViewSet)
 
 urlpatterns = [
     # path('forgot-password', ForgotPasswordFormView.as_view()),
-    path('', include(router.urls)),
+    path(r'', include(router.urls)),
     # path('api-auth/', include())
 ]
 
