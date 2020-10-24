@@ -10,6 +10,9 @@ all different pieces of code randomly put together without working yet
 
 
 
+
+now BE is refactoring, we got working authentication + posts & comments RESTFUL api
+
 toDo:
 
 BACKEND

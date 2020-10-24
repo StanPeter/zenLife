@@ -8,15 +8,10 @@ from .api import PostViewSet, CommentViewSet, UserViewSet
 router = routers.DefaultRouter()
 router.register(r'posts', PostViewSet, 'posts')
 router.register(r'users', UserViewSet)
+
 # router.register('comments/', CommentViewSet, 'comments')
 
 # Routers provide an easy way of automatically determining the URL conf.
-
-# GET   posts
-# POST  posts
-# GET   posts/{id}
-# PUT   doesnt work posts/{id}
-# DELETE doesnt work posts/{id}
 
 urlpatterns = [
     # path('forgot-password', ForgotPasswordFormView.as_view()),
@@ -25,35 +20,11 @@ urlpatterns = [
 ]
 
 # urlpatterns = [
-#     #myApp.com
-#     path('', views.post_list, name = 'post_list'),
-
-#     # myApp.com/post/1
-#     path('post/<int:pk>/', views.post_detail, name='post_detail'),
-
-#     #myApp.com/post/new
-#     path('post/new/', views.post_new, name='post_new'),
-
-#     #myApp.com/post/1/edit
-#     path('post/<int:pk>/edit/', views.post_edit, name = 'post_edit'),
-
-#     #myApp.com/post/1/delete
-#     path('post/<int:pk>/delete/', views.post_delete, name = 'post_delete'),
-
 #     #myApp.com/draft
 #     path('drafts/', views.post_draft, name = 'post_draft'),
 
 #     #myApp.com/post/2/publish
 #     path('post/<int:pk>/publish/', views.publish_draft, name='post_publish'),
-
-#     #myApp.com/accounts/login
-#     path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
-
-#     #myApp.com/accounts/logout
-#     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
-
-#     #myApp.com/accounts/logout
-#     path('post/<int:pk>/comments/', views.add_comment, name='post_comment'),
 
 #     #myApp.com/post/2/comments/delete/
 
@@ -61,9 +32,6 @@ urlpatterns = [
 
 #     #myApp.com/post/2/comments/approve/
 #     path('post/<int:pk>/comments/approve/', views.approve_comment, name='approve_comment'),
-
-#     #myApp.com/signup
-#     path('signup/', views.singUp, name='sign_up'),
 
 #     #myApp.com/articles
 #     path('articles/', views.articles, name='articles'),
